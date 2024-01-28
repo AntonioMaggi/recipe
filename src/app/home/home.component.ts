@@ -1,28 +1,27 @@
-import { Component, HostListener, ElementRef } from '@angular/core';
+// HomeComponent.component.ts
+import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../recipe.service';
+import { RecipeCardComponent } from '../recipe-card/recipe-card.component';
+
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    standalone: true,
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css',
+    imports: [RecipeCardComponent]
 })
 
-export class HomeComponent {
-  // Add ElementRef to your constructor
-  constructor(private el: ElementRef) {}
-
-  // Listen for scroll events on the window
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: Event) {
-    // Get the current scrollable section and the next section
-    const currentSection = this.el.nativeElement.querySelector('.scroll-section');
-    const nextSection = this.el.nativeElement.querySelector('.recipes-section');
-
-    // Check if the user has scrolled to the bottom of the current section
-    if (currentSection.scrollHeight - currentSection.scrollTop === currentSection.clientHeight) {
-      // If the bottom is reached, show the next section
-      nextSection.style.display = 'block';
-    }
+export class HomeComponent implements OnInit {
+  recipes: any[] = [];
+ 
+  constructor(private recipeService: RecipeService) { }
+ 
+  ngOnInit(): void {
+     this.recipeService.getRecipes().subscribe((data: any[]) => {
+       this.recipes = data;
+     });
   }
-}
+ }
+
+ 
