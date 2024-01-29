@@ -1,53 +1,5 @@
-<div class="container">
-  <header>
-    <h1>Welcome to YourRecipeHub</h1>
-    <p>Discover, Share, and Save Delicious Recipes!</p>
-  </header>
 
-  <section class="small-recipe-cards">
-    <div class="recipe-card-small">
-      <img src="https://www.budgetbytes.com/wp-content/uploads/2022/07/Chicken-Alfredo-above.jpg" alt="Recipe 1 Image" width="300" height="300">
-      <h3>Chicken Alfredo Pasta</h3>
-      <p>Creamy Alfredo sauce with grilled chicken and fettuccine pasta.</p>
-      <a href="/recipe/chicken-alfredo">View Recipe</a>
-    </div>
-
-    <div class="recipe-card-small">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/veggie-stir-fry-1597687367.jpg?crop=0.793xw:0.793xh;0.0619xw,0.0928xh&resize=1200:*" alt="Recipe 2 Image" width="300" height="300">
-      <h3>Veggie Stir-Fry</h3>
-      <p>Colorful mix of vegetables stir-fried in a savory soy-ginger sauce.</p>
-      <a href="/recipe/veggie-stir-fry">View Recipe</a>
-    </div>
-
-    <div class="recipe-card-small">
-      <img src="https://handletheheat.com/wp-content/uploads/2020/10/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg" width="300" height="300" alt="Recipe 3 Image">
-      <h3>Chocolate Chip Cookies</h3>
-      <p>Soft and chewy chocolate chip cookies with a hint of vanilla.</p>
-      <a href="/recipe/chocolate-chip-cookies">View Recipe</a>
-    </div>
-  </section>
-
-  <section class="site-description">
-    <h2>About YourRecipeHub</h2>
-    <p>YourRecipeHub is the go-to platform for food enthusiasts to discover, share, and save their favorite recipes. Whether you're a seasoned chef or a cooking novice, join our community to explore a world of culinary delights.</p>
-  </section>
-
-  <section class="faq">
-    <h2>FAQ</h2>
-    <dl>
-      <dt>Q: How can I add my own recipes to YourRecipeHub?</dt>
-      <dd>A: To add your recipes, simply sign up for an account, and you'll gain access to our user-friendly recipe submission interface.</dd>
-
-      <dt>Q: Can I save recipes for later?</dt>
-      <dd>A: Absolutely! You can save your favorite recipes to your profile for quick and easy access.</dd>
-
-      <dt>Q: Is YourRecipeHub free to use?</dt>
-      <dd>A: Yes, YourRecipeHub is completely free to use. Join our community and start exploring delicious recipes today!</dd>
-    </dl>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 YourRecipeHub. All rights reserved. | Privacy Policy | Terms of Service</p>
-  </footer>
-</div>
-
+  @for(recipe of recipes; track recipe.id) { 
+  <app-recipe-card></app-recipe-card>
+  }
+  
