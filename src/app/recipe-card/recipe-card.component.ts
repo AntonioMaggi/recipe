@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RecipeService } from '../recipe.service';
 
 
 @Component({
@@ -10,5 +11,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './recipe-card.component.css'
 })
 export class RecipeCardComponent {
+
+  constructor(  private recipeService: RecipeService) { }
   @Input() Recipe: any;
+  
  }
